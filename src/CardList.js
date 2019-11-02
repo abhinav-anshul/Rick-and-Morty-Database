@@ -4,14 +4,21 @@ import Card from "./Card";
 
 class CardList extends React.Component {
   state = {
-    url: "https://rickandmortyapi.com/api/character/?page=9",
+    // url: `https://rickandmortyapi.com/api/character/${[...Array(494).keys()]}`,
     character: []
   };
 
   async componentDidMount() {
-    const res = await axios.get(this.state.url);
+    //const res = await axios.get(this.state.url);
+    const ids = Array(493)
+      .fill(null)
+      .map((_, idx) => idx + 1)
+      .join(","); // '1,2,3...,300'
+    const url = `https://rickandmortyapi.com/api/character/[${ids}]`;
+    const res = await axios.get(url);
+
     this.setState({
-      character: res.data.results
+      character: res.data
     });
   }
 
