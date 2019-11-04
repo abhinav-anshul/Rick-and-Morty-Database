@@ -1,6 +1,8 @@
 import React from "react";
 import axios from "axios";
 import Card from "./Card";
+import Search from "./Search";
+import Search2 from "./Search2";
 
 class CardList extends React.Component {
   state = {
@@ -25,9 +27,17 @@ class CardList extends React.Component {
   render() {
     return (
       <div>
-        {this.state.character.map(character => (
+        {/* {this.state.character.map(character => (
+          <Search2 name={character.name} />
+        ))} */}
+        {let filter = this.state.character.filter(function(e){
+          return e.name.includes("Rick")
+        }
+
+        filter.map(character => (
           <Card
             key={character.id}
+            imgURL={character.image}
             id={character.id}
             name={character.name}
             status={character.status}
