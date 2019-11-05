@@ -9,7 +9,7 @@ class Card extends React.Component {
         <h1>NAME: {this.props.name}</h1>
         <h2>STATUS: {this.props.status}</h2>
         <h3>SPECIES: {this.props.species}</h3>
-        <h3>GENDER: {this.props.props}</h3>
+        {/* <h3>GENDER: {this.props.props}</h3> */}
         <h4>TYPE: {this.props.type}</h4>
       </div>
     );

@@ -1,13 +1,12 @@
 import React from "react";
 import axios from "axios";
 import Card from "./Card";
-import Search from "./Search";
-import Search2 from "./Search2";
 
 class CardList extends React.Component {
   state = {
     // url: `https://rickandmortyapi.com/api/character/${[...Array(494).keys()]}`,
-    character: []
+    character: [],
+    typedValue: ""
   };
 
   async componentDidMount() {
@@ -24,17 +23,33 @@ class CardList extends React.Component {
     });
   }
 
+  // handleChange(e) {
+  //   e.preventDefault();
+  //   let typedValue = e.target.value;
+  //   console.log(typedValue);
+  // }
+
+  handleChange = e => {
+    e.preventDefault();
+    let typedValue = e.target.value;
+    this.setState({ typedValue });
+  };
+
   render() {
+    // let filter = this.state.character.filter(function(e) {
+    //   return e.name.includes("Tiny Rick");
+    // });
+    const character = this.state.character;
+    const typedValue = this.state.typedValue;
+    let filter = character.filter(char => char.name.includes(typedValue));
+
     return (
       <div>
-        {/* {this.state.character.map(character => (
-          <Search2 name={character.name} />
-        ))} */}
-        {let filter = this.state.character.filter(function(e){
-          return e.name.includes("Rick")
-        }
+        <form>
+          <input type="text" name="title" onChange={this.handleChange} />
+        </form>
 
-        filter.map(character => (
+        {filter.map(character => (
           <Card
             key={character.id}
             imgURL={character.image}
@@ -42,8 +57,8 @@ class CardList extends React.Component {
             name={character.name}
             status={character.status}
             species={character.species}
-            gender={character.gender}
-            type={character.type ? character.type : "Unknown"}
+            // gender={character.gender}
+            type={character.type ? character.type : "Not Known"}
           />
         ))}
       </div>
