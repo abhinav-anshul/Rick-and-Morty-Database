@@ -1,11 +1,17 @@
 import React from "react";
+import "normalize.css";
+import "./Styles/Card.scss";
 
 class Card extends React.Component {
   render() {
     return (
-      <div>
-        <h1>ID: {this.props.id}</h1>
-        <img src={this.props.imgURL} alt="Image failed to load" />
+      <div className="card_main">
+        <img
+          src={this.props.imgURL}
+          className="card_image"
+          alt="Image failed to load"
+        />
+
         <h1>NAME: {this.props.name}</h1>
         <h2>STATUS: {this.props.status}</h2>
         <h3>SPECIES: {this.props.species}</h3>

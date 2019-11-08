@@ -1,0 +1,25 @@
+@import "./base";
+
+.cardlist {
+  background-color: $background-color;
+  padding: 2rem;
+  background: red;
+  .search-main {
+    outline: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    padding: 1rem;
+    margin: 2rem 27rem 2rem 27rem;
+    border-radius: 10rem;
+    .search {
+      border: none;
+      flex-grow: 1;
+      outline: none;
+      outline-style: none;
+      background: none;
+      font-size: 3rem;
+    }
+  }
+}

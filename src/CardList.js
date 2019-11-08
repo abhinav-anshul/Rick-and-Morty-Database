@@ -1,6 +1,8 @@
 import React from "react";
 import axios from "axios";
 import Card from "./Card";
+import Header from "./Header";
+import "./Styles/CardList.scss";
 
 class CardList extends React.Component {
   state = {
@@ -23,12 +25,6 @@ class CardList extends React.Component {
     });
   }
 
-  // handleChange(e) {
-  //   e.preventDefault();
-  //   let typedValue = e.target.value;
-  //   console.log(typedValue);
-  // }
-
   handleChange = e => {
     e.preventDefault();
     let typedValue = e.target.value;
@@ -44,10 +40,18 @@ class CardList extends React.Component {
     let filter = character.filter(char => char.name.includes(typedValue));
 
     return (
-      <div>
-        <form>
-          <input type="text" name="title" onChange={this.handleChange} />
-        </form>
+      <div className="cardlist">
+        <Header />
+        <div className="search-main">
+          <form className="search">
+            <input
+              type="text"
+              name="title"
+              placeholder="Search Characters"
+              onChange={this.handleChange}
+            />
+          </form>
+        </div>
 
         {filter.map(character => (
           <Card

@@ -1,0 +1,12 @@
+@import "./base";
+
+.header_main {
+  color: red;
+  font-size: 4.5rem;
+  display: flex;
+  justify-content: center;
+  background-color: $background-color;
+  padding: 4rem;
+  color: white;
+  box-shadow: 1rem white;
+}
