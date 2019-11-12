@@ -1,22 +1,23 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import "./DarkMode.scss";
 
 class DarkMode extends React.Component {
   state = {
-    setClass: ""
+    setClass: !JSON.parse(localStorage.getItem("Mode"))
   };
 
   handleChange = () => {
     this.setState({
-      setClass: "dark-mode"
+      setClass: !this.state.setClass
     });
-    localStorage.setItem("Mode", this.state.setClass);
   };
+
   render() {
+    localStorage.setItem("Mode", !this.state.setClass);
+    let toggle = JSON.parse(localStorage.getItem("Mode"));
+    console.log(toggle);
     return (
-      //   <div className={this.state.setClass ? this.state.setClass : "light-mode"}>
-      <div className={localStorage.getItem("Mode")}>
+      <div className={toggle ? "dark-mode" : "light-mode"}>
         <nav>Toggle goes Here</nav>
         <main>
           <h1>Light Mode</h1>
