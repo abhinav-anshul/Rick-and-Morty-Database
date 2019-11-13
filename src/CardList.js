@@ -32,18 +32,15 @@ class CardList extends React.Component {
   };
 
   render() {
-    // let filter = this.state.character.filter(function(e) {
-    //   return e.name.includes("Tiny Rick");
-    // });
     const character = this.state.character;
     const typedValue = this.state.typedValue;
     let filter = character.filter(char => char.name.includes(typedValue));
 
     return (
-      <div className="cardlist">
+      <div className="body-container">
         <Header />
-        <div className="search-main">
-          <form className="search">
+        <div className="form-container">
+          <form>
             <input
               type="text"
               name="title"
@@ -53,18 +50,19 @@ class CardList extends React.Component {
           </form>
         </div>
 
-        {filter.map(character => (
-          <Card
-            key={character.id}
-            imgURL={character.image}
-            id={character.id}
-            name={character.name}
-            status={character.status}
-            species={character.species}
-            // gender={character.gender}
-            type={character.type ? character.type : "Not Known"}
-          />
-        ))}
+        <div className="cardlist-container">
+          {filter.map(character => (
+            <Card
+              key={character.id}
+              imgURL={character.image}
+              id={character.id}
+              name={character.name}
+              status={character.status}
+              species={character.species}
+              type={character.type ? character.type : "Not Known"}
+            />
+          ))}
+        </div>
       </div>
     );
   }

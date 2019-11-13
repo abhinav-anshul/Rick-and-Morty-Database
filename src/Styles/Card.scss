@@ -1,7 +1,22 @@
-@import "./base";
-
-.card_image {
-  background-color: red;
-  display: flex;
-  border-radius: 2rem 2rem 0rem 0rem;
+.card-container {
+  //   border-radius: 0rem 0rem 1rem 1rem;
+  background-color: whitesmoke;
+  padding: 0rem 0rem 3rem 0rem;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
+  .card-image {
+    border-radius: 1rem 1rem 0rem 0rem;
+  }
+  .card-details {
+    text-align: center;
+    .card-name {
+      font-size: 2rem;
+      padding: 2rem;
+      text-align: center;
+      font-weight: 700;
+    }
+    .span {
+      color: gray;
+      font-weight: 400;
+    }
+  }
 }

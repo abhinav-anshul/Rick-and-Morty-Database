@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
-import DarkMode from "./DarkMode";
 import "normalize.css";
+import "./Styles/_base.scss";
 
-ReactDOM.render(<DarkMode />, document.getElementById("root"));
+ReactDOM.render(<App />, document.getElementById("root"));

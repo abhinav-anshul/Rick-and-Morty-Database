@@ -5,62 +5,31 @@ import "./Styles/Card.scss";
 class Card extends React.Component {
   render() {
     return (
-      <div className="card_main">
+      <div className="card-container">
         <img
           src={this.props.imgURL}
-          className="card_image"
+          className="card-image"
           alt="Image failed to load"
         />
-
-        <h1>NAME: {this.props.name}</h1>
-        <h2>STATUS: {this.props.status}</h2>
-        <h3>SPECIES: {this.props.species}</h3>
-        {/* <h3>GENDER: {this.props.props}</h3> */}
-        <h4>TYPE: {this.props.type}</h4>
+        <div className="card-details">
+          <div className="card-name"> {this.props.name}</div>
+          <h2>
+            <span className="span">STATUS: </span>
+            {this.props.status}
+          </h2>
+          <h2>
+            <span className="span">SPECIES: </span>
+            {this.props.species}
+          </h2>
+          {/* <h3>GENDER: {this.props.props}</h3> */}
+          <h2>
+            <span className="span">TYPE: </span>
+            {this.props.type}
+          </h2>
+        </div>
       </div>
     );
   }
 }
 
 export default Card;
-
-// state = {
-//   id: "",
-//   name: "",
-//   status: "",
-//   species: "",
-//   type: "",
-//   gender: "",
-//   imgURL: ""
-// };
-
-// componentDidMount() {
-//   const id = this.props.id;
-//   const name = this.props.name;
-//   const status = this.props.status;
-//   const species = this.props.species;
-//   const gender = this.props.gender;
-//   const type = this.props.type;
-//   const imgURL = `https://rickandmortyapi.com/api/character/avatar/${id}.jpeg`;
-//   //console.log(this.props);
-
-//   this.setState({
-//     id: id,
-//     name: name,
-//     status: status,
-//     species: species,
-//     gender: gender,
-//     type: type,
-//     imgURL: imgURL
-//   });
-// }
-
-{
-  /* <h1>ID: {this.state.id}</h1>
-        <img src={this.state.imgURL} alt="Image failed to load" />
-        <h1>NAME: {this.state.name}</h1>
-        <h2>STATUS: {this.state.status}</h2>
-        <h3>SPECIES: {this.state.species}</h3>
-        <h3>GENDER: {this.state.props}</h3>
-        <h4>TYPE: {this.state.type}</h4> */
-}

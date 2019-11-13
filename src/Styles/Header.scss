@@ -1,12 +1,40 @@
-@import "./base";
+.header-container {
+  .button-container {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    height: 5vh;
+    background-color: pink;
+    padding: 2rem;
+    .button-holder {
+      display: flex;
+      justify-content: flex-end;
 
-.header_main {
-  color: red;
-  font-size: 4.5rem;
-  display: flex;
-  justify-content: center;
-  background-color: $background-color;
-  padding: 4rem;
-  color: white;
-  box-shadow: 1rem white;
+      .dark-mode {
+        .actual-button {
+          all: unset;
+          cursor: pointer;
+          font-size: 1.5rem;
+          font-weight: 700;
+        }
+      }
+      .light-mode {
+        .actual-button {
+          all: unset;
+          cursor: pointer;
+          font-size: 1.5rem;
+          font-weight: 700;
+        }
+      }
+    }
+  }
+
+  .heading__main {
+    display: flex;
+    justify-content: center;
+    background-color: red;
+    font-size: 6rem;
+    padding: 2rem;
+    font-weight: 700;
+  }
 }
