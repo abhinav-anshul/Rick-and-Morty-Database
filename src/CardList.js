@@ -34,7 +34,9 @@ class CardList extends React.Component {
   render() {
     const character = this.state.character;
     const typedValue = this.state.typedValue;
-    let filter = character.filter(char => char.name.includes(typedValue));
+    let filter = character.filter(char =>
+      char.name.toLowerCase().includes(typedValue.toLowerCase())
+    );
 
     return (
       <div className="body-container">
