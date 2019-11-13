@@ -40,10 +40,11 @@ class CardList extends React.Component {
       <div className="body-container">
         <Header />
         <div className="form-container">
-          <form>
+          <form className="actual-form">
             <input
               type="text"
               name="title"
+              className="actual-input-box"
               placeholder="Search Characters"
               onChange={this.handleChange}
             />

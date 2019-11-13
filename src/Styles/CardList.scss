@@ -1,6 +1,25 @@
 .body-container {
   .form-container {
-    background-color: aqua;
+    // background-color: aqua;
+    .actual-form {
+      // background-color: green;
+      display: flex;
+      justify-content: center;
+      height: 7rem;
+      width: 100%;
+      input {
+        width: 40%;
+        outline: none;
+        text-align: center;
+        font-size: 4rem;
+      }
+      .actual-input-box {
+        // background-color: black;
+        all: unset;
+        font-size: 4rem;
+        text-align: center;
+      }
+    }
   }
   .cardlist-container {
     display: grid;
@@ -10,6 +29,6 @@
     column-gap: 3rem;
     justify-items: center;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    background-color: black;
+    // background-color: black;
   }
 }
