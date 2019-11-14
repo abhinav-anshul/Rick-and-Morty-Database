@@ -4,7 +4,11 @@ import Card from "./Card";
 import Header from "./Header";
 import "./Styles/CardList.scss";
 
+import { ThemeContext } from "./contexts/ThemeContext";
+
 class CardList extends React.Component {
+  static contextType = ThemeContext;
+
   state = {
     // url: `https://rickandmortyapi.com/api/character/${[...Array(494).keys()]}`,
     character: [],
@@ -32,6 +36,11 @@ class CardList extends React.Component {
   };
 
   render() {
+    /////
+    const { isLightTheme, lightMode, darkMode } = this.context;
+    const theme = isLightTheme ? lightMode : darkMode;
+    /////
+
     const character = this.state.character;
     const typedValue = this.state.typedValue;
     let filter = character.filter(char =>
@@ -41,9 +50,13 @@ class CardList extends React.Component {
     return (
       <div className="body-container">
         <Header />
-        <div className="form-container">
+        <div
+          style={{ backgroundColor: theme.mainBackground }}
+          className="form-container"
+        >
           <form className="actual-form">
             <input
+              style={{ color: theme.textColor, fontWeight: 400 }}
               type="text"
               name="title"
               className="actual-input-box"
@@ -52,8 +65,10 @@ class CardList extends React.Component {
             />
           </form>
         </div>
-
-        <div className="cardlist-container">
+        <div
+          style={{ backgroundColor: theme.mainBackground }}
+          className="cardlist-container"
+        >
           {filter.map(character => (
             <Card
               key={character.id}
